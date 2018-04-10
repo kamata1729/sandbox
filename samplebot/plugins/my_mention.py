@@ -8,14 +8,14 @@ import numpy as np
 def default(message):
     text = message.body['text']
     try:
-        pl_equation(text, outfile='output', padding=0.1)
+        pl_equation(text, outfile='output', fontsize=30, padding=0.1)
         image_pass = 'output.png'
         message.channel.upload_file(fname='output', fpath=image_pass)
     except:
         message.reply("画像に変換できません")
 
 
-def pl_equation(eq, fontsize=50, outfile=None, padding=0.1):
+def pl_equation(eq, fontsize=30, outfile=None, padding=0.1):
     """Plot an equation as a matplotlib figure.
     Parameters
     ----------
